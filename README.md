@@ -23,7 +23,7 @@ Apache Maven is a software project management and comprehension tool. Based on t
 You can use the image directly, e.g.
 
 ```
-docker run --rm -it chinayin/maven:3.8-jdk-8-buster-slim
+docker run --rm -it chinayin/maven:3-jdk-8-buster-slim
 ```
 
 The images are built daily and have the security release enabled, so will contain any security updates released more
@@ -32,5 +32,5 @@ than 24 hours ago.
 You can also use the images as a base for your own Dockerfile:
 
 ```
-FROM chinayin/maven:3.8-jdk-8-buster-slim
+FROM chinayin/maven:3-jdk-8-buster-slim
 ```
