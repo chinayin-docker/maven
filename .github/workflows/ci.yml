@@ -20,9 +20,9 @@ jobs:
         working-directory: ${{ matrix.major }}/${{ matrix.os }}
         run: |
           echo ::set-output name=repository::${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})
-          echo ::set-output name=version::$(grep -oE 'MAVEN_VERSION=[[:space:]]*[0-9].[0-9]+.[0-9]+' Dockerfile | grep -oE '[0-9].[0-9]+.[0-9]+')
-          echo ::set-output name=minor_version::$(grep -oE 'MAVEN_VERSION=[[:space:]]*[0-9].[0-9]+.[0-9]+' Dockerfile | grep -oE '[0-9].[0-9]+')
-          echo ::set-output name=major_version::$(grep -oE 'MAVEN_VERSION=[[:space:]]*[0-9].[0-9]+.[0-9]+' Dockerfile | grep -oE '[0-9]')
+          echo ::set-output name=version::$(grep 'MAVEN_VERSION=' Dockerfile | awk -F '[=.]' '{print $2"."$3"."$4}')
+          echo ::set-output name=minor_version::$(grep 'MAVEN_VERSION=' Dockerfile | awk -F '[=.]' '{print $2"."$3}')
+          echo ::set-output name=major_version::$(grep 'MAVEN_VERSION=' Dockerfile | awk -F '[=.]' '{print $2}')
           echo ::set-output name=workdir::${{ matrix.major }}/${{ matrix.os }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
