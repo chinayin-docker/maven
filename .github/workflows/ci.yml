@@ -22,6 +22,7 @@ jobs:
           echo ::set-output name=repository::${GITHUB_ACTOR}/$(basename ${GITHUB_REPOSITORY})
           echo ::set-output name=version::$(grep -oE 'MAVEN_VERSION=[[:space:]]*[0-9].[0-9]+.[0-9]+' Dockerfile | grep -oE '[0-9].[0-9]+.[0-9]+')
           echo ::set-output name=minor_version::$(grep -oE 'MAVEN_VERSION=[[:space:]]*[0-9].[0-9]+.[0-9]+' Dockerfile | grep -oE '[0-9].[0-9]+')
+          echo ::set-output name=major_version::$(grep -oE 'MAVEN_VERSION=[[:space:]]*[0-9].[0-9]+.[0-9]+' Dockerfile | grep -oE '[0-9]')
           echo ::set-output name=workdir::${{ matrix.major }}/${{ matrix.os }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -45,6 +46,6 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: |
-            ${{ steps.vars.outputs.repository }}:${{ matrix.major }}-jdk-${{ matrix.major }}-${{ matrix.os }}
+            ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.major_version }}-jdk-${{ matrix.major }}-${{ matrix.os }}
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.minor_version }}-jdk-${{ matrix.major }}-${{ matrix.os }}
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}-jdk-${{ matrix.major }}-${{ matrix.os }}
