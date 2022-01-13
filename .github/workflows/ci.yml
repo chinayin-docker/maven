@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         major: [ 8,11 ]
-        os: [ buster-slim,bullseye-slim ]
+        os: [ bullseye-slim ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -54,7 +54,7 @@ jobs:
     strategy:
       matrix:
         major: [ 17 ]
-        os: [ buster-slim,bullseye-slim ]
+        os: [ bullseye-slim ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
