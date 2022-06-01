@@ -5,7 +5,7 @@
 #--------------------------------------------------------------------------
 #
 
-FROM chinayin/openjdk:11-jdk-bullseye-slim
+FROM chinayin/openjdk:11-jdk
 
 RUN apt-get update \
   && apt-get install -y curl procps \
