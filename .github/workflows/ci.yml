@@ -52,11 +52,11 @@ jobs:
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.major_version }}-jdk-${{ matrix.major }}-${{ matrix.os }}
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.minor_version }}-jdk-${{ matrix.major }}-${{ matrix.os }}
             ${{ steps.vars.outputs.repository }}:${{ steps.vars.outputs.version }}-jdk-${{ matrix.major }}-${{ matrix.os }}
-  build-v17:
+  build-v18:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        major: [ 17 ]
+        major: [ 18 ]
         os: [ bullseye-slim ]
     steps:
       - name: Checkout code
