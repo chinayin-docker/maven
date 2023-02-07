@@ -39,7 +39,7 @@ jobs:
           cp files/*.xml ${{ steps.vars.outputs.workdir }}/
           tree .
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: ${{ steps.vars.outputs.workdir }}
           pull: true
@@ -85,7 +85,7 @@ jobs:
           cp files/*.xml ${{ steps.vars.outputs.workdir }}/
           tree .
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: ${{ steps.vars.outputs.workdir }}
           pull: true
