@@ -6,7 +6,8 @@ Maven Image
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/chinayin/maven?sort=semver)
 ![Docker Pulls](https://img.shields.io/docker/pulls/chinayin/maven)
 
-Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (
+POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
 ### Supported tags and respective `Dockerfile` links
 
@@ -23,7 +24,7 @@ Apache Maven is a software project management and comprehension tool. Based on t
 You can use the image directly, e.g.
 
 ```
-docker run --rm -it chinayin/maven:3-jdk-8-buster-slim
+docker run --rm -it chinayin/maven:3-jdk-17
 ```
 
 The images are built daily and have the security release enabled, so will contain any security updates released more
@@ -32,5 +33,5 @@ than 24 hours ago.
 You can also use the images as a base for your own Dockerfile:
 
 ```
-FROM chinayin/maven:3-jdk-8-buster-slim
+FROM chinayin/maven:3-jdk-17
 ```
