@@ -1,5 +1,5 @@
 variable "version" {
-  default = "3.9.4"
+  default = "3.9.6"
 }
 variable "minor" {
   default = "3.9"

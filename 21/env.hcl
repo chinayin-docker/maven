@@ -1,3 +1,3 @@
 variable "jdk" {
-  default = "20"
+  default = "21"
 }
