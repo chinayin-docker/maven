@@ -11,9 +11,10 @@ POM), Maven can manage a project's build, reporting and documentation from a cen
 
 ### Supported tags and respective `Dockerfile` links
 
-![](https://img.shields.io/docker/v/chinayin/maven/3.8-jdk-8-buster-slim)
-![](https://img.shields.io/docker/v/chinayin/maven/3.8-jdk-11-buster-slim)
-![](https://img.shields.io/docker/v/chinayin/maven/3.8-jdk-16-buster-slim)
+![](https://img.shields.io/docker/v/chinayin/maven/3.9.16-jdk-8)
+![](https://img.shields.io/docker/v/chinayin/maven/3.9.16-jdk-11)
+![](https://img.shields.io/docker/v/chinayin/maven/3.9.16-jdk-17)
+![](https://img.shields.io/docker/v/chinayin/maven/3.9.16-jdk-21)
 
 ### Image Variants
 
@@ -24,7 +25,7 @@ POM), Maven can manage a project's build, reporting and documentation from a cen
 You can use the image directly, e.g.
 
 ```
-docker run --rm -it chinayin/maven:3-jdk-17
+docker run --rm -it chinayin/maven:3.9.16-jdk-17
 ```
 
 The images are built daily and have the security release enabled, so will contain any security updates released more
@@ -33,5 +34,5 @@ than 24 hours ago.
 You can also use the images as a base for your own Dockerfile:
 
 ```
-FROM chinayin/maven:3-jdk-17
+FROM chinayin/maven:3.9.16-jdk-17
 ```
